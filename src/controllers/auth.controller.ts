@@ -11,7 +11,7 @@ function publicUser(user: { id: number; username: string; email: string; name: s
   return { id: user.id, username: user.username, email: user.email, name: user.name };
 }
 
-function generateTokens(userId: number) {
+export function generateTokens(userId: number) {
   const accessToken = jwt.sign({ sub: String(userId) }, config.jwtSecret, {
     expiresIn: '15m',
   });

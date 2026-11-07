@@ -39,7 +39,6 @@ export function validateParams(schema: ZodTypeAny) {
 }
 
 // Перевіряє query-параметри. Готові дані (зі значеннями за замовчуванням) лежать у res.locals.query.
-// В Express 5 req.query не можна перезаписати, тому використовується res.locals.
 export function validateQuery(schema: ZodTypeAny) {
   return (req: Request, res: Response, next: NextFunction): void => {
     const result = schema.safeParse(req.query);

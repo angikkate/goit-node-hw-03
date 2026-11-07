@@ -7,3 +7,5 @@ node_modules/
 *.db-journal
 .postman/
 postman/
+uploads/*
+!uploads/.gitkeep
