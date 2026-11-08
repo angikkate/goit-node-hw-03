@@ -9,7 +9,7 @@ export const createAnnouncementSchema = z.object({
     .trim()
     .min(10, 'Description must be at least 10 characters')
     .max(2000, 'Description must be at most 2000 characters'),
-  price: z.number().positive(),
+  price: z.coerce.number().positive(),
   category: CATEGORIES,
 });
 
